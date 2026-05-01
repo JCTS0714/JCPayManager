@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PayManager - Sistema profesional de administración de pagos">
+    <meta name="theme-color" content="#0f766e">
+    
+    <title>PayManager - Administración de Pagos</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: #f8fafc;
+        }
+        
+        #root {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script>
+        // Detectar si el servidor está corriendo
+        window.addEventListener('load', () => {
+            fetch('http://localhost:3001/api/clientes')
+                .catch(() => {
+                    console.warn('⚠️ El servidor backend no está corriendo. Inicia con: npm start');
+                });
+        });
+    </script>
+</body>
+</html>
